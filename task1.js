@@ -19,11 +19,11 @@ const cekHariKerja = (day) => {
 cekHariKerja("senin")
   // jika return promise yang dikirimkan tidak error maka akan menjalankan perintah then
   .then((hari) => {
-    console.log(hari);
+    console.log(`hari ${hari} adalah hari kerja`);
   })
   // jika return promise yang dikirimkan error maka akan manjalankan perintah catch dan menampilkan error yang sudah ditentukan (jika terjadi error)
   .catch((err) => {
-    console.log(err);
+    console.log(err.message);
   });
 
 // b. try catch
@@ -35,10 +35,10 @@ async function main() {
     // membuat variabel penampung yang value nya di ambil dari  function cekHariKerja yang berisikan parameter,dan di dahului dengan kata await
     // pengunaan await untuk menunggu proses asynchronous yang ada dalam function cekHariKerja
     const result = await cekHariKerja("selasa");
-    console.log(result);
+    console.log(`hari ${result} adalah hari kerja`);
   } catch (err) {
     // jika return promise yang dikirimkan error maka akan manjalankan perintah catch dan menampilkan error yang sudah ditentukan (jika terjadi error)
-    console.log(err);
+    console.log(err.message);
   }
 }
 
